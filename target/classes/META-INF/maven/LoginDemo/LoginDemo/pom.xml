@@ -1,0 +1,149 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>LoginDemo</groupId>
+	<artifactId>LoginDemo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>LoginDemo</name>
+	<description>This project intend to create demo test cases related to Login module</description>
+	<url>http://maven.apache.org</url>
+	<packaging>jar</packaging>
+  
+  
+	  <!-- ==****==     MAVEN PROPERTIES - BUILD VERSIONS     ==****== -->
+	    
+	    <properties>
+		    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		    <selenium.version>4.19.1</selenium.version>
+		    <cucumber.version>7.12.1</cucumber.version>
+		    <testng.version>7.10.2</testng.version>
+		    <commons.io.version>2.16.1</commons.io.version>
+		    <maven.compiler.plugin.version>3.13.0</maven.compiler.plugin.version>
+		    <maven.compiler.source>17</maven.compiler.source>
+		    <maven.compiler.target>17</maven.compiler.target>
+		    <maven.surefire.plugin.version>3.2.5</maven.surefire.plugin.version>
+	    </properties>
+	  
+	    <!-- ==****== BUILD - PLUGINS AND THEIR CONFIGURATIONS ==****== -->
+	    
+		<build>
+			<plugins>
+				
+		      <!-- **** MAVEN COMPILER PLUGIN **** -->
+		      <!-- Compiler plugin configures the java version to be used for compiling the code -->
+		    
+		      <plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-compiler-plugin</artifactId>
+		        <version>${maven.compiler.plugin.version}</version>
+		        <configuration>
+		          <source>${maven.compiler.source}</source>
+		          <target>${maven.compiler.target}</target>
+		          <encoding>${project.build.sourceEncoding}</encoding>
+		        </configuration>
+		      </plugin>
+		 
+		      <!-- **** MAVEN SUREFIRE PLUGIN **** -->
+		      <!-- Following plugin executes the testng tests -->
+		    
+		      <plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-surefire-plugin</artifactId>
+		        <version>${maven.surefire.plugin.version}</version>
+		        <configuration>
+				  <!-- Suite testng xml file to consider for test execution -->
+		          <suiteXmlFiles>
+		            <suiteXmlFile>testng.xml</suiteXmlFile>
+		          </suiteXmlFiles>
+		        </configuration>
+		      </plugin>
+		      
+			</plugins>
+		</build>
+	  
+	    <!-- ==****==              MAVEN DEPENDENCIES          ==****== -->
+	    
+	    <dependencies>
+	    
+	    	<dependency>
+				<groupId>org.seleniumhq.selenium</groupId>
+				<artifactId>selenium-java</artifactId>
+				<version>${selenium.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.seleniumhq.selenium</groupId>
+				<artifactId>selenium-support</artifactId>
+				<version>${selenium.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.seleniumhq.selenium</groupId>
+				<artifactId>selenium-chrome-driver</artifactId>
+				<version>${selenium.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.seleniumhq.selenium</groupId>
+				<artifactId>selenium-firefox-driver</artifactId>
+				<version>${selenium.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.seleniumhq.selenium</groupId>
+				<artifactId>selenium-remote-driver</artifactId>
+				<version>${selenium.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>io.github.bonigarcia</groupId>
+				<artifactId>webdrivermanager</artifactId>
+				<version>5.8.0</version>
+			</dependency>
+	 
+	    	<dependency>
+			    <groupId>commons-io</groupId>
+			    <artifactId>commons-io</artifactId>
+			    <version>${commons.io.version}</version>
+			</dependency>
+		
+			<dependency>
+			    <groupId>org.testng</groupId>
+			    <artifactId>testng</artifactId>
+			    <version>${testng.version}</version>
+			    <scope>test</scope>
+			</dependency>
+			
+			<dependency>
+			    <groupId>io.cucumber</groupId>
+			    <artifactId>cucumber-java</artifactId>
+			    <version>${cucumber.version}</version>
+			</dependency>
+			
+			<dependency>
+			    <groupId>io.cucumber</groupId>
+			    <artifactId>cucumber-core</artifactId>
+			    <version>${cucumber.version}</version>
+			</dependency>
+	
+			<dependency>
+			    <groupId>io.cucumber</groupId>
+			    <artifactId>cucumber-testng</artifactId>
+			    <version>${cucumber.version}</version>
+			</dependency>
+	
+			<dependency>
+			    <groupId>org.slf4j</groupId>
+			    <artifactId>slf4j-api</artifactId>
+			    <version>1.7.32</version>
+			</dependency>
+			<dependency>
+			    <groupId>org.slf4j</groupId>
+			    <artifactId>slf4j-simple</artifactId>
+			    <version>1.7.32</version>
+			</dependency>
+	    
+	    </dependencies>
+    
+</project>
